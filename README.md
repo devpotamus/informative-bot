@@ -55,12 +55,12 @@ chmod 755 azure-task.sh
 NOTE: You will be prompted for information if you do not set environment variables when running the scripts. The following environment variables apply to the script:
 
 ```bash
-TASK_NAME=""     #the task name
-IMAGE_NAME=""    #the image name
-ACR_NAME=""      #the azure container registry name
-GIT_USER=""      #the git user used to access source repository
-GIT_REPO=""      #the git repository the source is contained within
-GIT_PAT=""       #the personal access token to access the repository instance
+TASK_NAME=""     # the task name
+IMAGE_NAME=""    # the image name
+ACR_NAME=""      # the azure container registry name
+GIT_USER=""      # the git user used to access source repository
+GIT_REPO=""      # the git repository the source is contained within
+GIT_PAT=""       # the personal access token to access the repository instance
 ```
 
 3) Configure an Azure Container Instance
