@@ -1,0 +1,23 @@
+{
+  "name": "informative-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devpotamus/informative-bot.git"
+  },
+  "author": "devpotamus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devpotamus/informative-bot/issues"
+  },
+  "homepage": "https://github.com/devpotamus/informative-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0"
+  }
+}
