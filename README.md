@@ -68,7 +68,7 @@ GIT_PAT=""       # the personal access token to access the repository instance
 NOTE: The following environment variable apply to the container environment
 
 ```bash
-BOT_TOKEN=""    #the discord bot token
+BOT_TOKEN=""    # the discord bot token
 ```
 
 ## Usage

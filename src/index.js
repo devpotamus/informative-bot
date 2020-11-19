@@ -21,7 +21,6 @@ async function handleMessage(newMessage) {
     // lets store some basic info
     const {
         channel,
-        id,
         content
     } = newMessage;
 
@@ -33,10 +32,7 @@ async function handleMessage(newMessage) {
 
     newMessage.delete().catch(console.error);
 
-    const {
-        botMessages,
-        userMessages
-    } = await getMessagesByType(channel);
+    const botMessages = await getMessagesByType(channel);
 
     if (!botMessages || botMessages.length == 0) {
         channel.send(content);
@@ -44,13 +40,6 @@ async function handleMessage(newMessage) {
         const lander = botMessages[0];
 
         lander.edit(content).catch(console.error);
-    }
-
-    for (let i = 0; i < userMessages.length; i++) {
-        if (userMessages[i].deleted) continue;
-        if (userMessages[i].id == id) continue;
-
-        userMessages[i].delete().catch(console.error);
     }
 }
 
@@ -105,19 +94,9 @@ async function getMessagesByType(channel) {
         return msg.author.bot;
     }
 
-    function userFilter(msg) {
-        return !msg.author.bot;
-    }
-
     const messages = (await channel.messages.fetch().catch(console.error)).array();
 
-    const botMessages = messages.filter(botFilter);
-    const userMessages = messages.filter(userFilter);
-
-    return {
-        botMessages,
-        userMessages
-    };
+    return messages.filter(botFilter);
 }
 
 /*
